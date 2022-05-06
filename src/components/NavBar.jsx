@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import CartWidget from "./CartWidget"
 
 const NavBar = () => {
@@ -22,19 +23,19 @@ const NavBar = () => {
                         </button>
                     </div>
                     <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                        <div class="flex-shrink-0 flex items-center">
+                        <Link to= '/' class="flex-shrink-0 flex items-center">
                             <img class="block lg:hidden h-8 w-auto" src="https://uploads.turbologo.com/uploads/design/hq_preview_image/705328/draw_svg20210629-14837-onadff.svg.png" alt="Workflow"/>
                                 <img class="hidden lg:block h-12 w-auto rounded-full" src="https://uploads.turbologo.com/uploads/design/hq_preview_image/705328/draw_svg20210629-14837-onadff.svg.png" alt="Workflow"/>
-                                </div>
+                        </Link>
                                 <div class="hidden sm:block sm:ml-6">
                                     <div class="flex space-x-4">
-                                        <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Inicio</a>
+                                        <Link to='/' class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Inicio</Link>
 
-                                        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Nosotros</a>
+                                        <Link to={`/category/:id`} class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Nosotros</Link>  
 
-                                        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Puntos de Venta</a>
+                                        <Link to='/' class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Puntos de Venta</Link>
 
-                                        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contacto</a>
+                                        <Link to='/' class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contacto</Link>
                                     </div>
                                 </div>
                         </div>
