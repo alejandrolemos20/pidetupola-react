@@ -31,9 +31,9 @@ const NavBar = () => {
                                     <div class="flex space-x-4">
                                         <Link to='/' class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Inicio</Link>
 
-                                        <Link to={`/category/:id`} class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Nosotros</Link>  
+                                        <Link to={`/category/Ale`} class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Ales</Link>  
 
-                                        <Link to='/' class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Puntos de Venta</Link>
+                                        <Link to='/category/Lager' class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Lager</Link>
 
                                         <Link to='/' class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contacto</Link>
                                     </div>

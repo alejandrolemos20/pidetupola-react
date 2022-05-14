@@ -1,14 +1,30 @@
 import React from 'react';
 import { useState } from 'react';
+import { useAppContext } from "./AppContext"
+import { useCartContext } from "./CartContext"
 
 
-const ItemCount = ({ initial, stock, onAdd }) => {
+const ItemCount = ({ initial, stock, onAdd, id }) => {
     
     const [cantidad, setCantidad] = useState(initial);
+    const { addToCart } = useCartContext()
+	const { products } = useAppContext()
 
     const addProduct = (num) => {
         setCantidad(cantidad+ num);
     };
+
+    const handleClick = (id, cantidad) => {
+		const findProduct = products.find((producto) => producto.id === id)
+
+		if (!findProduct) {
+			alert("Error en la base de datos")
+			return
+		}
+
+		addToCart(findProduct, cantidad)
+		onAdd(cantidad)
+	}
 
     return (
         <div className="grid">
@@ -32,7 +48,8 @@ const ItemCount = ({ initial, stock, onAdd }) => {
 
             <button
                 className="md:rounded-lg leading-5 rounded-md bg-orange-400 border-none text-base mt-5 ml-auto mr-auto w-24 h-8 cursor-pointer font-mono font-bold hover:bg-orange-500"
-                onClick={() => onAdd(cantidad)}
+                onClick={() => handleClick(id, cantidad)}
+                //onClick={() => onAdd(cantidad)}
                 disabled={stock === 0 ? true : null}
             >
                 Añadir

@@ -1,36 +1,16 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
-import { chelasDisponibles } from "../data/chelas.js"
-import { useEffect, useState } from "react"
+import React, { useState } from "react"
+import { Link } from "react-router-dom"
 import ItemCount from './ItemCount.jsx';
 import '../styles/Item.css';
 
+const ItemDetail = ({ producto }) => {
+    const { name, price, stock, thumbnail, description, category, id } = producto //lo desestructuramos. Esto es para poder usar las variables de forma mas clara
 
-const ItemDetail = () => {
+    const [terminar, setTerminar] = useState(false)
 
-    const { ItemId } = useParams() //Desestructuramos el id y regresa todos los parametros que capture
-    const onAdd = (cantidad) => {
-        alert(`Has agregado ${cantidad} cervezas 🍺`);
-    };
-    //Usamos useEffect para traer la descripción del producto desde nuestro archivo de datos
-    const [pola, setPola] = useState({}) //{} son objetos que no tienen una propiedad, no es un array
-    useEffect(() => {
-        //funcion anonima asincrona autoejecutable
-        (async () => {
-            const ItemData = await getItemDetail() //Declaro funcion a usar y adicionalmente con el await y el async le digo que espere a que se revuelva la función para asignar un valor
-            if (ItemData) {
-                setPola(ItemData)
-                console.log(ItemData)
-            }
-        })()
-    }, [ItemId]) //se coloca ItemId aquí para que el useeffect se ejecute cada que hay un nuevo id
-
-    const getItemDetail = () => { //promesa para pedir los datos al servidor
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                resolve(chelasDisponibles.find(c => c.id == ItemId)) //c de chelas - .find es para buscar algo en los datos, en este caso buscamos el id
-            }, 1000);
-        })
+    const onAdd = (count) => { //función recibe el contador
+        setTerminar(true)
+        console.log(count)
     }
 
     return (
@@ -50,27 +30,36 @@ const ItemDetail = () => {
                             </li>
 
                             <li class="text-sm">
-                                <a href="#" aria-current="page" class="font-medium text-gray-500 hover:text-gray-600"> {pola.name} </a>
+                                <a href="#" aria-current="page" class="font-medium text-gray-500 hover:text-gray-600"> {name} </a>
                             </li>
                         </ol>
                     </nav>
                     <div class="lg:w-4/5 mx-auto flex flex-wrap">
-                        <img alt="pola" class="lg:w-1/2 w-full object-cover object-center rounded-lg border border-gray-200" src={pola.thumbnail}/>
-                            <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-                                <h2 class="text-sm title-font text-gray-500 tracking-widest">Pide Tu Pola</h2>
-                                <h1 class="text-gray-900 text-3xl title-font font-medium mb-1 mt-2">{pola.name}</h1>
-                                <p class="leading-relaxed mt-6">{pola.description} </p>
-                                
-                                <div class="flex justify-center mt-6">
-                                    <p class="title-font font-medium text-2xl text-center text-gray-900">${pola.price}k </p>
-                                </div>
-                                    <ItemCount stock={pola.stock} onAdd={onAdd} initial={1} />
+                        <img alt={`${category}, ${name}`} class="lg:w-1/2 w-full object-cover object-center rounded-lg border border-gray-200" src={thumbnail} />
+                        <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+                            <h2 class="text-sm title-font text-gray-500 tracking-widest">Pide Tu Pola</h2>
+                            <h1 class="text-gray-900 text-3xl title-font font-medium mb-1 mt-2">{name}</h1>
+                            <p class="leading-relaxed mt-6">{description} </p>
+
+                            <div class="flex justify-center mt-6">
+                                <p class="title-font font-medium text-2xl text-center text-gray-900">${price}k </p>
                             </div>
+                            {terminar ? (
+								<Link
+									to="/cart"
+									className="text-center text-base mt-5 ml-auto mr-auto w-24 h-8 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded" 
+								>
+									Terminar Compra
+								</Link>
+							) : (
+								<ItemCount stock={stock} onAdd={onAdd} id={id} initial={1} />
+							)}
+                        </div>
                     </div>
                 </div>
             </section>
 
-            
+
 
 
 

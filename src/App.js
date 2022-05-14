@@ -1,6 +1,8 @@
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import CartContextProvider from './components/CartContext';
+import AppContextProvider from './components/AppContext';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import ItemListContainer from './components/ItemListContainer';
 import NavBar from './components/NavBar';
@@ -8,15 +10,28 @@ import NavBar from './components/NavBar';
 function App() {
   return (
     <>
-    <BrowserRouter>
-    <NavBar></NavBar>
-        <Routes>
-          <Route path='/' element={<ItemListContainer></ItemListContainer>}/>
-          <Route path='/category/:id' element={<ItemListContainer></ItemListContainer>}/>
-          <Route path='/cerveza/:ItemId' element={<ItemDetailContainer></ItemDetailContainer>}/>
-        </Routes> 
-    </BrowserRouter>
-    {/* <ItemListContainer greeting='Bienvenido'></ItemListContainer> */}
+    <AppContextProvider>
+				<CartContextProvider>
+					<BrowserRouter>
+						<NavBar />
+            <marquee direction="left" bgcolor="black" scrollamount="10" className="text-white">¡Compra tu pola artesanal ya!</marquee>
+						<Routes>
+							<Route
+								path="/"
+								element={<ItemListContainer greetings={"Tu chela"} />}
+							/>
+							<Route
+								path="/category/:categoryId"
+								element={<ItemListContainer greetings={"Tu chela"} />}
+							/>
+							<Route path="/item/:id" element={<ItemDetailContainer />} />
+							{/* <Route path="/cart" element={<Cart />} /> */}
+						</Routes>
+					</BrowserRouter>
+				</CartContextProvider>
+			</AppContextProvider>
+    
+
     </>
   );
 }
