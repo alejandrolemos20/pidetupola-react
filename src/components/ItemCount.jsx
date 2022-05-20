@@ -17,11 +17,10 @@ const ItemCount = ({ initial, stock, onAdd, id }) => {
     const handleClick = (id, cantidad) => {
 		const findProduct = products.find((producto) => producto.id === id)
 
-		if (!findProduct) {
+		if (!findProduct) { //si no está el producto tira error
 			alert("Error en la base de datos")
 			return
 		}
-
 		addToCart(findProduct, cantidad)
 		onAdd(cantidad)
 	}

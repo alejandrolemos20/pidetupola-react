@@ -4,6 +4,21 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAh0c0cqteTZ0kXLx81adbmLu4Cu5zmvMc",
+  authDomain: "pidetupola--ecommerce.firebaseapp.com",
+  projectId: "pidetupola--ecommerce",
+  storageBucket: "pidetupola--ecommerce.appspot.com",
+  messagingSenderId: "246574478421",
+  appId: "1:246574478421:web:c8c806afc2873cdda590dc"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

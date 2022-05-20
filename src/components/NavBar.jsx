@@ -4,10 +4,10 @@ import CartWidget from "./CartWidget"
 const NavBar = () => {
 
     return (
-        <header>
+        <header className="h-full">
             
             <nav class="bg-black">
-            <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 bg-black">
                 <div class="relative flex items-center justify-between h-16">
                     <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
                         
@@ -22,20 +22,20 @@ const NavBar = () => {
                             </svg>
                         </button>
                     </div>
-                    <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                    <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start ">
                         <Link to= '/' class="flex-shrink-0 flex items-center">
                             <img class="block lg:hidden h-8 w-auto" src="https://uploads.turbologo.com/uploads/design/hq_preview_image/705328/draw_svg20210629-14837-onadff.svg.png" alt="Workflow"/>
                                 <img class="hidden lg:block h-12 w-auto rounded-full" src="https://uploads.turbologo.com/uploads/design/hq_preview_image/705328/draw_svg20210629-14837-onadff.svg.png" alt="Workflow"/>
                         </Link>
                                 <div class="hidden sm:block sm:ml-6">
                                     <div class="flex space-x-4">
-                                        <Link to='/' class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Inicio</Link>
+                                        <Link to='/' onClick="document.location.reload(true)" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Inicio</Link>
 
-                                        <Link to={`/category/Ale`} class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Ales</Link>  
+                                        <Link to='/category/Ale' onClick="document.location.reload(true)" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Ales</Link>  
 
-                                        <Link to='/category/Lager' class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Lager</Link>
+                                        <Link to='/category/Lager' onClick="document.location.reload(true)" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Lager</Link>
 
-                                        <Link to='/' class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contacto</Link>
+                                        <Link to='/contacto' class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contacto</Link>
                                     </div>
                                 </div>
                         </div>
@@ -58,6 +58,9 @@ const NavBar = () => {
                     </div>
                 </div>
                 </nav>
+            <div className='h-full bg-black '>
+                <marquee direction="left" bgcolor="black" scrollamount="10" className="text-white">¡Compra tu pola artesanal ya!</marquee>
+            </div>
                 
                 
         </header>

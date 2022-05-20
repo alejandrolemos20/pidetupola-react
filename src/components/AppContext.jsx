@@ -1,3 +1,4 @@
+import { collection, getDocs, getFirestore } from "firebase/firestore"
 import React, { createContext, useContext, useEffect, useState } from "react"
 import { getItem } from "../data/chelas"
 
@@ -9,8 +10,11 @@ const AppContextProvider = ({ children }) => {
 	const [products, setProducts] = useState([])
 
 	useEffect(() => {
-		getItem().then((resp) => setProducts(resp))
-	})
+        const db = getFirestore()
+        const polasCollection = collection (db,'items')
+        getDocs (polasCollection).then(resp => setProducts(resp.docs.map(it=> ({...it.data()}) )))
+
+    },[])
 	return (
 		<AppContext.Provider value={{ products }}>{children}</AppContext.Provider>
 	)
