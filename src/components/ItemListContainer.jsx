@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
-import { getItem } from "../data/chelas"
 import Loader from "./Loader"
 import ItemList from './ItemList';
 
-import {getFirestore} from 'firebase/firestore/lite'
 
 
 const ItemListContainer = ({ greetings }) => { //se hace el renderizado de la promesa

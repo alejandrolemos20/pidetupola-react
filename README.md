@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Mi Chela Store 🍻
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descripción
 
-## Available Scripts
+`Proyecto Final` para el curso de ReactJS de la academia `Coder House` año 2022.
+La aplicación permite conectarse con un backend realizado con `Firebase`, dónde estará toda la información de nuestras cervezas disponibles.
+Permite seleccionar productos, navegar a sus detalles, agregarlos al carrito dependiendo del stock disponible, se podrá acceder a él para ver el total de la compra y simular la compra de los productos.
+Se usará un formulario con datos básicos para la compra y luego de confirmar
+se genera un id de orden para el usuario y en firebase se guarda la orden con los productos que compró.
 
-In the project directory, you can run:
+**Tecnologías y librerías Utilizadas:**
+
+- Interfaz realizada con **ReactJS - Create React App**
+- Estilos con **Tailwind CSS**
+- **FontAwesome** para los íconos
+- Ruteo con **React Router Dom**
+- Backend con **Firebase**
+
+## Descargar y correr el proyecto
+
+Una vez clonado o descargado el proyecto, instalar dependencias:
+
+### `npm install`
+
+Correr el servidor:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Se abre una pestaña del navegador en el puerto 3000:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Sino copiar esta URL y pegarla en el navegador: `http://localhost:3000`
 
-### `npm test`
+## Backend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Recordar que tiene un backend realizado con Firebase, por si quieren descargar y correr este proyecto, tienen que generar su backend en firebase sino local con data fake.
+En el archivo `.env.example` estan las variables que deben ir para poder llenarlas con sus datos de Firebase.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## ScreenShots
+![Screenshot (100)](https://user-images.githubusercontent.com/95537711/168451570-e0701154-4e15-4e55-851e-b91a91219979.png)
+![Screenshot - 2022-05-14T184844 008](https://user-images.githubusercontent.com/95537711/168451590-96b75fbe-4e6d-4b29-aff1-72a8bfb30a87.png)
+![Screenshot - 2022-05-14T184930 377](https://user-images.githubusercontent.com/95537711/168451606-b5fbc9ed-b883-4f6d-9379-986568f3c661.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## VIDEO
+Hacé click [AQUÍ](https://share.vidyard.com/watch/Ddy6RKUPtijXpSacrCJFBG?) para ver un video de demostración del proceso de compra de la app.
+© 2022 GitHub, Inc.
+Terms
+Privacy
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
