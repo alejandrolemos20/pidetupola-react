@@ -6,7 +6,7 @@ export const useCartContext = () => useContext(CartContext) //se exporta para po
 
 const CartContextProvider = ({ children }) => {
 	// Logica
-	const [cart, setCart] = useState([])
+	const [cart, setCart] = useState([]) //guardamos los productos
 
 	// Validar si está el item en el carrito
 	const isInCart = (id) => cart.find((producto) => producto.id === id) //se recibe un id y se busca el producto en el arreglo.
@@ -27,9 +27,18 @@ const CartContextProvider = ({ children }) => {
 		}
 
 		producto.quantity = cantidad
+        
 		setCart([...newCart, producto])
+        
 	}
-
+    /* const delProduct = (id) => {
+        cart.splice(
+        cart.findIndex((p) => p.id === id),
+        1
+        );
+        setCart([...cart]);
+    }; */
+    
 	const deleteFromCart = (producto) => {
 		const newCart = [...cart]
 
@@ -46,7 +55,19 @@ const CartContextProvider = ({ children }) => {
 
 	const deleteCart = () => setCart([])
 
-	console.log(cart)
+    //Suma de total de productos y costo total
+
+    const productsCount = () => {
+        return cart.reduce((total, p) => (total += p.quantity), 0);
+    };
+    
+    const getGrandTotal = () => {
+        return cart.reduce((total , p) => (total += p.price * p.quantity), 0);
+    };
+
+
+	console.log('mi carro',cart)
+    console.log('tamaño',cart.length)
 
 	return (
 		<CartContext.Provider
@@ -56,6 +77,8 @@ const CartContextProvider = ({ children }) => {
 				deleteFromCart,
 				deleteCart,
 				setCart,
+                productsCount,
+                getGrandTotal,
 			}}
 		>
 			{children}

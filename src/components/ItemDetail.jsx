@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { collection, getDocs, getFirestore, where,query } from "firebase/firestore";
 import ItemDetailCard from "./ItemDetailCard.jsx";
 
-const ItemList = () => { //En ItemList recibimos la categoria nos evitamos el props, destructuring
+const ItemDetail = () => { //En ItemList recibimos la categoria nos evitamos el props, destructuring
 
     const [producto, setProducts] = useState([])
     const { id} = useParams()
@@ -65,4 +65,4 @@ const ItemList = () => { //En ItemList recibimos la categoria nos evitamos el pr
     )
 }
 
-export default ItemList
+export default ItemDetail

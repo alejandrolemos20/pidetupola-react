@@ -7,7 +7,7 @@ const ItemDetailCard = ({name, price, category, img, stock, description, id}) =>
 
     const onAdd = (count) => { //función recibe el contador
         setTerminar(true)
-        console.log(count)
+        
     }
   return (
       

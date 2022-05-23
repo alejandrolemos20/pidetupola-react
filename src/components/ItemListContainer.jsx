@@ -11,7 +11,7 @@ const ItemListContainer = ({ greetings }) => { //se hace el renderizado de la pr
     useEffect(() => {
         setTimeout(() =>
             setIsLoading(false),
-            3000
+            2000
         );
     }, []);
 
