@@ -26,7 +26,7 @@ function Cart() {
                         )
                         : (
                                 
-                            <div className="h-screen  bg-yellow-50">
+                            <div className="flex h-full bg-yellow-50">
                                 <div className="flex flex-col justify-between w-full lg:max-w-7xl ">
                                     <div className="flex justify-center items-center text-center bg-yellow-50 m-3">
                                         <Link to="/">
