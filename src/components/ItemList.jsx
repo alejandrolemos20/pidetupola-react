@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import '../styles/beerpreloader.css'
 import { useParams } from "react-router-dom";
 import { collection, getDocs, getFirestore, where,query } from "firebase/firestore";
-
+import Swal from 'sweetalert2';
 
 const ItemList = () => { //En ItemList recibimos la categoria nos evitamos el props, destructuring
 
@@ -28,9 +28,6 @@ const ItemList = () => { //En ItemList recibimos la categoria nos evitamos el pr
         const polasCollection = collection(db, 'items')
         getDocs(polasCollection ).then( snapshot => {
           if (snapshot.size > 0) {
-            // console.log(snapshot.docs);
-            // const ids = snapshot.docs.map( d => d.id ).join(',')
-            // console.log('ids: ', ids);
     
             const polasData = snapshot.docs.map( d => ({'id': d.id, ... d.data()}) )
             // console.log(milanesasData);
@@ -49,6 +46,13 @@ const ItemList = () => { //En ItemList recibimos la categoria nos evitamos el pr
         if (snapshot.size > 0) {
           const PolasCategoryData = snapshot.docs.map( d => ({'id': d.id, ... d.data()}) )
           setProducts(PolasCategoryData)
+        }else {
+            Swal.fire({
+                icon: 'error',
+                title: "El producto no existe",
+                text: "Revisa que estes buscando la categoría correcta, Haz click en volver",
+                footer: '<a href="/">Volver</a>',
+            })
         }
       }
    
