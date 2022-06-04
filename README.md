@@ -43,7 +43,7 @@ En el archivo `.env.example` estan las variables que deben ir para poder llenarl
 
 
 ## VIDEO
-Hacé click [AQUÍ](https://share.vidyard.com/watch/Ddy6RKUPtijXpSacrCJFBG?) para ver un video de demostración del proceso de compra de la app.
+Hacé click [AQUÍ](https://share.vidyard.com/watch/GVqy5iUtAKxSQX7TaeRLNt?) para ver un video de demostración del proceso de compra de la app.
 © 2022 GitHub, Inc.
 Terms
 Privacy
