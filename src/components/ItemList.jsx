@@ -4,6 +4,7 @@ import '../styles/beerpreloader.css'
 import { useParams } from "react-router-dom";
 import { collection, getDocs, getFirestore, where,query } from "firebase/firestore";
 
+
 const ItemList = () => { //En ItemList recibimos la categoria nos evitamos el props, destructuring
 
     const [producto, setProducts] = useState([])

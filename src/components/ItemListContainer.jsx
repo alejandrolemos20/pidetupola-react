@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react"
 import Loader from "./Loader"
 import ItemList from './ItemList';
-
-
-
+import '../styles/button.css';
 const ItemListContainer = ({ greetings }) => { //se hace el renderizado de la promesa
     //const [category, setCategory] = useState() //creamos un estado que guarda una categoria
     const [isLoading, setIsLoading] = useState(true);
@@ -36,9 +34,9 @@ const ItemListContainer = ({ greetings }) => { //se hace el renderizado de la pr
 
     return (
         <>
-            <div className="block w-100 h-screen bg-yellow-50">
+            <div className="block w-100 h-full bg-yellow-50">
                 
-                <div className="bg-yellow-50 relative text-center flex flex-col justify-center items-center">
+                <div className="bg-yellow-50 relative text-center flex flex-col justify-center items-center pb-2">
                 
                     {isLoading && <><h1 className="text-center pt-24 text-2xl animate-bounce">Cargando tus chelas</h1><Loader size={50} color="black" /></>}
                     {!isLoading && <><h1 className="text-4xl font-extrabold tracking-tight text-gray-900 text-center pt-6">{greetings}, Nuestras Chelas </h1><ItemList></ItemList></>}

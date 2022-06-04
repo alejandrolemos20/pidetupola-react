@@ -8,12 +8,12 @@ import reportWebVitals from './reportWebVitals';
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAh0c0cqteTZ0kXLx81adbmLu4Cu5zmvMc",
-  authDomain: "pidetupola--ecommerce.firebaseapp.com",
-  projectId: "pidetupola--ecommerce",
-  storageBucket: "pidetupola--ecommerce.appspot.com",
-  messagingSenderId: "246574478421",
-  appId: "1:246574478421:web:c8c806afc2873cdda590dc"
+  apiKey: process.env.REACT_APP_APIKEY ,
+  authDomain: process.env.REACT_APP_AUTHDOMAIN,
+  projectId: process.env.REACT_APP_PROJECTID ,
+  storageBucket: process.env.REACT_APP_STORAGEBUCKET ,
+  messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID ,
+  appId:  process.env.REACT_APP_APPID
 };
 
 // Initialize Firebase

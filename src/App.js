@@ -7,10 +7,13 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import ItemListContainer from './components/ItemListContainer';
 import Cart from './components/Cart'
 import NavBar from './components/NavBar';
+import Checkout from './components/Checkout';
+import Footer from './components/Footer';
+
 
 function App() {
   return (
-    <>
+    
       <AppContextProvider>
         <CartContextProvider>
           <BrowserRouter>
@@ -30,17 +33,20 @@ function App() {
                 path="/cart"
                 element={<Cart />}
               />
+              <Route
+                path="/checkout"
+                element={<Checkout />}
+              />
 
               <Route path="/item/:id" element={<ItemDetailContainer />} />
-
-              {/* <Route path="/cart" element={<Cart />} /> */}
             </Routes>
+          <Footer />
           </BrowserRouter>
         </CartContextProvider>
       </AppContextProvider>
 
 
-    </>
+    
   );
 }
 

@@ -1,0 +1,50 @@
+body {
+
+    --tw-bg-opacity: 1;
+    background-color: rgb(254 252 232 / var(--tw-bg-opacity));
+    height: 100%;
+
+}
+
+html {
+    height: 100%;              /* for the page to take full window height */
+    box-sizing: border-box;    /* to have the footer displayed at the bottom of the page without scrolling */
+}
+
+.LINK {
+    background: #000;
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.LINK svg,
+.LINK svg rect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+}
+
+.LINK svg rect {
+    stroke: #00e2ff;
+    stroke-width: 4;
+    transition: 2s;
+    stroke-dasharray: 60 200;
+    stroke-dashoffset: 300;
+}
+
+.LINK:hover svg rect {
+    stroke: #ff0;
+    stroke-dasharray: 200 60;
+    stroke-dashoffset: 0;
+}

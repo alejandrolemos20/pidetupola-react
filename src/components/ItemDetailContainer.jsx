@@ -19,12 +19,12 @@ const ItemDetailContainer = () => {
 
     return (
         <>
-            <div className="block w-100 h-screen bg-yellow-50">
+            <div className="flex-1 block w-100 h-screen bg-yellow-50">
 
-                <div className="relative bg-yellow-50 text-center flex flex-col justify-center items-center">
+                <div className=" bg-yellow-50 text-center flex flex-col justify-center items-center">
 
                     {isLoading && <><h1 className="text-center pt-24 text-2xl animate-bounce">Cargando tus chelas</h1><Loader size={50} color="black" /></>}
-                    {!isLoading && <><h1 className="text-4xl font-extrabold tracking-tight text-gray-900 text-center pt-6">Nuestras Chelas </h1><ItemDetail></ItemDetail></>}
+                    {!isLoading && <><h1 className="text-4xl font-extrabold tracking-tight text-gray-900 text-center pt-2">Nuestras Chelas </h1><ItemDetail></ItemDetail></>}
                 </div>
 
             </div>
