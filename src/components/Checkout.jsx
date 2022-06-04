@@ -5,7 +5,7 @@ import { useCartContext } from './CartContext';
 
 const Checkout = () => {
     const { productsCount, getGrandTotal, setName, setEmail, setPhone, manejarCompra, name, email, phone, setConfirmEmail, confirmEmail, compra } = useCartContext();
-    console.log(compra);
+    
 
     function onNameChange(evt) {
         setName(evt.target.value);

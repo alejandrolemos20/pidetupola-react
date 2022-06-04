@@ -139,6 +139,7 @@ const CartContextProvider = ({ children }) => {
         setCompra(buyerData);
 
         // Add a new document with a generated id.
+        
         if (compra.buyer.name !== '' && compra.buyer.phone !== '' && compra.buyer.email !== '') {
         const db = getFirestore();
         const OrderCollection = addDoc(collection(db, "orders"), buyerData)
